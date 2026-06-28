@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── LIGHT MODE ── warm earthy: #291C0E #6E473B #A78D78 #BEB5A9 #E1D4C2 */
+:root {
+  color-scheme: light;
+  --bg-page:         #E1D4C2;
+  --bg-card:         #E1D4C2;
+  --bg-subtle:       #D8CCBA;
+  --accent:          #6E473B;
+  --accent-2:        #A78D78;
+  --text-1:          #291C0E;
+  --text-2:          #6E473B;
+  --text-3:          #A78D78;
+  --border:          #C4B8AB;
+  --shadow:          rgba(41,28,14,0.12);
+  --hero-gradient:   #E1D4C2;
+  --btn-primary:     #291C0E;
+  --btn-primary-fg:  #E1D4C2;
+  --card-stripe:     linear-gradient(to right, #291C0E, #6E473B);
+}
+
+/* ── DARK MODE ── 60% black · 30% grey · 10% green accent */
+.dark {
+  color-scheme: dark;
+  --bg-page:         #0d0d0d;
+  --bg-card:         #1a1a1a;
+  --bg-subtle:       #242424;
+  --accent:          #22c55e;
+  --accent-2:        #4ade80;
+  --text-1:          #f0f0f0;
+  --text-2:          #a0a0a0;
+  --text-3:          #606060;
+  --border:          #2a2a2a;
+  --shadow:          rgba(34,197,94,0.08);
+  --hero-gradient:   linear-gradient(135deg, #0a1a0f 0%, #111111 100%);
+  --btn-primary:     #22c55e;
+  --btn-primary-fg:  #0a0a0a;
+  --card-stripe:     linear-gradient(to right, #22c55e, #4ade80);
+}
+
+/* ShadCN token bridges so Card/Badge/etc pick up the theme */
+:root {
+  --background:           var(--bg-page);
+  --foreground:           var(--text-1);
+  --card:                 var(--bg-card);
+  --card-foreground:      var(--text-1);
+  --muted:                var(--bg-subtle);
+  --muted-foreground:     var(--text-2);
+  --primary:              var(--btn-primary);
+  --primary-foreground:   var(--btn-primary-fg);
+  --ring:                 var(--accent);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg-page);
+  color: var(--text-1);
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, sans-serif;
+  transition: background 0.3s ease, color 0.2s ease;
+}
+
+/* smooth transitions on all elements */
+*, *::before, *::after {
+  transition: background-color 0.25s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }

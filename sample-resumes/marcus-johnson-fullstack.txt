@@ -1,0 +1,52 @@
+MARCUS JOHNSON
+marcus.j.dev@outlook.com | (512) 555-0847
+GitHub: github.com/marcusjohnson | Austin, TX
+Portfolio: marcusjohnson.dev
+
+PROFILE
+Full Stack Developer with 5 years of experience, with the last 3 years specializing in
+React frontend development. Comfortable owning features end-to-end from database
+schema to pixel-perfect UI. Strong TypeScript skills and proven track record of
+shipping production features at scale.
+
+EXPERIENCE
+
+Software Engineer (Frontend-Heavy) — Dell Technologies, Austin (2021 – Present)
+- Primary frontend engineer for internal IT management dashboard (React + TypeScript)
+- Built drag-and-drop server configuration UI handling 500+ component types
+- Implemented real-time status updates using Server-Sent Events (SSE)
+- Wrote E2E tests with Playwright covering critical user flows
+- Reduced frontend build time from 4 min to 45 seconds using Vite migration
+- Collaborated with design team to build a shared UI component library (30+ components)
+
+Full Stack Developer — Healthcare startup (NDA), Remote (2019 – 2021)
+- Built patient-facing appointment booking system with React, Node.js, PostgreSQL
+- Implemented HIPAA-compliant form handling and data encryption
+- Created RESTful API with Express, documented with Swagger
+- Managed AWS infrastructure: EC2, RDS, S3, CloudFront
+
+Junior Developer — Freelance (2018 – 2019)
+- Built 8 client websites using React and WordPress
+- Custom e-commerce stores with Stripe payment integration
+- Responsive CSS and cross-browser compatibility
+
+TECHNICAL SKILLS
+Frontend: React 17/18, TypeScript, Next.js, Redux Toolkit, React Query, TailwindCSS,
+          Styled Components, Framer Motion, Storybook
+Backend:  Node.js, Express, PostgreSQL, MongoDB, Prisma, REST APIs
+Testing:  Jest, React Testing Library, Playwright, Cypress
+DevOps:   Docker, GitHub Actions, AWS (EC2, S3, RDS, CloudFront)
+Tools:    Vite, Webpack, ESLint, Figma, Linear, Notion
+
+EDUCATION
+B.S. Computer Information Systems
+Texas State University (2014 – 2018)
+GPA: 3.5/4.0
+
+OPEN SOURCE CONTRIBUTIONS
+- Contributed 3 PRs to React Query (bug fixes and documentation)
+- Maintainer of a Vite plugin for SVG optimization (500+ weekly downloads)
+
+ACHIEVEMENTS
+- Employee of the Quarter, Dell Q3 2023
+- Speaker at Austin React Meetup: "Migrating 200k LOC from CRA to Vite" (2023)

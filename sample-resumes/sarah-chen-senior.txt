@@ -1,0 +1,50 @@
+SARAH CHEN
+Email: sarah.chen@email.com | Phone: +1 (415) 555-0192
+LinkedIn: linkedin.com/in/sarahchen | GitHub: github.com/sarahchen
+Location: San Francisco, CA
+
+SUMMARY
+Senior Frontend Engineer with 7 years of experience building scalable React applications.
+Specialist in TypeScript, performance optimization, and design systems. Led frontend
+architecture at two Series B startups. Passionate about developer experience and clean code.
+
+EXPERIENCE
+
+Senior Frontend Engineer — Stripe, San Francisco (2021 – Present)
+- Led migration of core dashboard from React 16 to React 18, improving performance by 40%
+- Architected component library used by 12 product teams, reducing UI development time by 30%
+- Built real-time transaction monitoring UI using WebSockets and React Query
+- Mentored 4 junior engineers, conducted bi-weekly code reviews
+- Stack: React 18, TypeScript, TailwindCSS, GraphQL, Vitest
+
+Frontend Engineer — Notion, San Francisco (2019 – 2021)
+- Owned the editor toolbar and formatting experience used by 10M+ users
+- Implemented collaborative cursor presence feature using CRDTs
+- Reduced bundle size by 35% through code splitting and lazy loading
+- Built keyboard shortcut system with 60+ shortcuts using custom hook architecture
+
+Frontend Developer — Webflow, Remote (2017 – 2019)
+- Built drag-and-drop canvas interactions using React and native browser APIs
+- Developed CSS-in-JS theming system supporting custom brand colors
+- Wrote comprehensive unit tests with Jest, achieving 85% code coverage
+
+SKILLS
+Languages: TypeScript, JavaScript (ES2023), HTML5, CSS3
+Frameworks: React 18, Next.js 14, Vue 3
+Styling: TailwindCSS, CSS Modules, Styled Components, Framer Motion
+Tools: Vite, Webpack, ESLint, Prettier, Figma, Storybook
+Testing: Jest, Vitest, React Testing Library, Playwright
+APIs: REST, GraphQL, WebSockets
+Cloud: AWS (S3, CloudFront), Vercel, Netlify
+
+EDUCATION
+B.S. Computer Science — UC Berkeley (2013 – 2017)
+GPA: 3.8/4.0 | Dean's List all 8 semesters
+
+PROJECTS
+- Open-source React hooks library (2.1k GitHub stars)
+- TailwindCSS plugin for accessible focus styles (800+ weekly npm downloads)
+
+CERTIFICATIONS
+- AWS Certified Developer – Associate (2022)
+- Google Mobile Web Specialist (2020)

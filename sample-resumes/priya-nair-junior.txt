@@ -1,0 +1,54 @@
+PRIYA NAIR
+priya.nair2024@gmail.com | +91 87654 32109
+LinkedIn: linkedin.com/in/priyanair | Kochi, Kerala
+
+CAREER OBJECTIVE
+Recent Computer Science graduate eager to start a career in frontend development.
+Completed multiple React projects during coursework and self-study. Quick learner
+with good problem-solving skills.
+
+EDUCATION
+B.Tech in Computer Science and Engineering
+College of Engineering Trivandrum (2020 – 2024)
+CGPA: 7.6/10
+
+Relevant Coursework: Data Structures, Web Technologies, Database Management,
+Software Engineering, Object Oriented Programming
+
+SKILLS
+- HTML, CSS, basic JavaScript
+- React (learned through Udemy course and personal projects)
+- Some exposure to TailwindCSS
+- Git basics (push, pull, commit)
+- C, C++, Java (from college coursework)
+- Basic SQL
+
+PROJECTS (Academic & Personal)
+
+College Placement Portal (Final Year Project)
+- Team of 4 students
+- Built frontend pages for student registration and job listing using React
+- Used local state management with useState and useEffect hooks
+- Backend was built by teammates using PHP
+
+Todo App
+- Simple todo application built while learning React
+- Features: add, delete, mark complete
+- Used localStorage for persistence
+
+Portfolio Website
+- Personal portfolio built with HTML, CSS, and basic JavaScript
+- Responsive design for mobile and desktop
+
+INTERNSHIP
+Web Development Intern — Local IT Company, Kochi (Jun 2023 – Aug 2023)
+- Assisted senior developers with HTML/CSS fixes
+- Learned about client communication and project workflows
+- Updated static website content for a client
+
+CERTIFICATIONS
+- Udemy: The Complete React Developer Course (2023)
+- NPTEL: Introduction to Modern Application Development (2022)
+
+LANGUAGES
+English (Professional), Malayalam (Native), Hindi (Basic)

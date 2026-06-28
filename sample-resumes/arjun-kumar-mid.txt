@@ -1,0 +1,46 @@
+ARJUN KUMAR
+arjun.kumar@gmail.com | +91 98765 43210
+GitHub: github.com/arjunkumar | Bengaluru, India
+
+OBJECTIVE
+Frontend Developer with 3 years of experience in React and JavaScript looking for
+opportunities to grow in a product-driven company. Strong understanding of REST APIs
+and component-based architecture.
+
+WORK EXPERIENCE
+
+Frontend Developer — Razorpay, Bengaluru (Jan 2022 – Present)
+- Built and maintained merchant dashboard using React and Redux
+- Integrated payment analytics charts using Recharts library
+- Worked with backend team to consume REST APIs for transaction data
+- Improved page load time by 20% by implementing lazy loading for route components
+- Participated in Agile sprints, daily standups, and sprint planning
+
+Junior Frontend Developer — Freshworks, Chennai (Jun 2020 – Dec 2021)
+- Developed customer support ticket UI components using React
+- Fixed bugs and maintained legacy JavaScript codebase
+- Wrote unit tests using Jest for critical business logic
+- Collaborated with UX designers to implement Figma mockups pixel-perfectly
+
+SKILLS
+- React (functional components, hooks, context)
+- JavaScript ES6+, some TypeScript experience
+- HTML5, CSS3, SCSS
+- Redux, React Query (learning)
+- REST API integration
+- Git, JIRA
+- Basic Node.js knowledge
+
+EDUCATION
+B.Tech in Information Technology
+Vellore Institute of Technology (2016 – 2020)
+CGPA: 8.2/10
+
+PROJECTS
+E-commerce Frontend (Personal Project)
+- Built a shopping cart app with React, Context API, and Fake Store API
+- Deployed on Netlify with CI/CD via GitHub Actions
+
+Movie Search App
+- React app using TMDB API with search, filter, and watchlist features
+- Responsive design with CSS Grid and Flexbox

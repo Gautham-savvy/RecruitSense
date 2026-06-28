@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Enums ───────────────────────────────────────────────────────────────────
+
+enum PipelineStage {
+  APPLIED
+  SHORTLISTED
+  INTERVIEW_SCHEDULED
+  INTERVIEWED
+  OFFER_SENT
+  HIRED
+  REJECTED
+}
+
+enum QuestionType {
+  TECHNICAL
+  BEHAVIOURAL
+  CULTURE_FIT
+}
+
+enum ProcessingStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+}
+
+// ─── Models ──────────────────────────────────────────────────────────────────
+
+model User {
+  id        String    @id @default(uuid())
+  clerkId   String    @unique
+  email     String    @unique
+  name      String?
+  jobPosts  JobPost[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model JobPost {
+  id          String      @id @default(uuid())
+  title       String
+  department  String?
+  description String
+  isActive    Boolean     @default(true)
+  orgId       String?
+  userId      String
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  candidates  Candidate[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Candidate {
+  id                 String              @id @default(uuid())
+  name               String
+  email              String?
+  resumeUrl          String?
+  resumeText         String?
+  status             ProcessingStatus    @default(PENDING)
+  stage              PipelineStage       @default(APPLIED)
+  notes              String?
+  jobPostId          String
+  jobPost            JobPost             @relation(fields: [jobPostId], references: [id], onDelete: Cascade)
+  score              Score?
+  interviewQuestions InterviewQuestion[]
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+}
+
+model Score {
+  id              String    @id @default(uuid())
+  overallScore    Float
+  skillsScore     Float
+  experienceScore Float
+  educationScore  Float
+  reasoning       String
+  strengths       String[]
+  gaps            String[]
+  candidateId     String    @unique
+  candidate       Candidate @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model InterviewQuestion {
+  id          String       @id @default(uuid())
+  question    String
+  type        QuestionType
+  order       Int
+  candidateId String
+  candidate   Candidate    @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+  createdAt   DateTime     @default(now())
+}

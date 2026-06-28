@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(docker --version 2>&1)",
+      "PowerShell(docker exec recruitsense_postgres psql -U postgres -d recruitsense -c \"\\\\dt\")",
+      "PowerShell(Set-Location \"e:\\\\projects\\\\RecruitSense\\\\frontend\" && Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"npm run dev\" -WindowStyle Normal)",
+      "PowerShell(docker exec recruitsense_postgres cat /var/lib/postgresql/data/pg_hba.conf)",
+      "PowerShell(docker exec recruitsense_postgres bash -c \"sed -i 's/host all all all scram-sha-256/host all all all trust/' /var/lib/postgresql/data/pg_hba.conf && psql -U postgres -c 'SELECT pg_reload_conf\\(\\);'\")",
+      "PowerShell(docker exec recruitsense_postgres tail -5 /var/lib/postgresql/data/pg_hba.conf)",
+      "PowerShell(docker exec recruitsense_postgres bash -c \"psql -U postgres -c \\\\\"SELECT client_addr, state FROM pg_stat_activity WHERE usename='postgres' LIMIT 5)",
+      "PowerShell(\\\\\"\")",
+      "PowerShell(docker exec recruitsense_postgres psql -U postgres -c \"SHOW hba_file; SHOW data_directory;\")",
+      "PowerShell(docker exec recruitsense_postgres psql -U postgres -c \"ALTER SYSTEM SET log_connections = on; ALTER SYSTEM SET log_line_prefix = '%t [%p] %u@%d from %h '; SELECT pg_reload_conf\\(\\);\")",
+      "PowerShell(docker exec recruitsense_postgres psql -U postgres -c \"ALTER SYSTEM SET log_connections = on;\")",
+      "PowerShell(docker exec recruitsense_postgres psql -U postgres -c \"SELECT pg_reload_conf\\(\\);\")",
+      "PowerShell(Get-Process -Name node -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue; Start-Sleep -Seconds 1; Set-Location \"e:\\\\projects\\\\RecruitSense\\\\backend\"; Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"cd 'e:\\\\projects\\\\RecruitSense\\\\backend'; npm run dev\" -WindowStyle Normal; Write-Host \"Backend starting...\")",
+      "PowerShell(Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"cd 'e:\\\\projects\\\\RecruitSense\\\\frontend'; npm run dev\" -WindowStyle Normal; Write-Host \"Frontend starting...\")",
+      "PowerShell(Invoke-WebRequest -Uri \"http://localhost:3000/health\" -Method GET)",
+      "PowerShell(docker exec recruitsense_postgres psql -U postgres -d recruitsense -c \"SELECT typname FROM pg_type WHERE typtype = 'e';\")",
+      "PowerShell(Get-Process -Name node -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Force -ErrorAction SilentlyContinue)",
+      "Bash(npm run *)",
+      "Read(//tmp/**)",
+      "Bash(pkill -f \"ts-node\")",
+      "Bash(pkill -f \"nodemon\")",
+      "PowerShell(Stop-Process -Force)",
+      "PowerShell(Get-Process -Name nodemon -ErrorAction SilentlyContinue)",
+      "Bash(echo \"Backend PID: $!\")",
+      "PowerShell(netstat -ano)",
+      "PowerShell(Get-Process -Id 12420)",
+      "Bash(curl -s http://localhost:3000/health)",
+      "Bash(node -e \"const p = require\\('pdf-parse'\\); console.log\\('type:', typeof p\\); console.log\\('keys:', Object.keys\\(p\\)\\); console.log\\('default:', typeof p.default\\);\")",
+      "Bash(node -e \"const { PDFParse } = require\\('pdf-parse'\\); const p = new PDFParse\\(\\); console.log\\('methods:', Object.getOwnPropertyNames\\(Object.getPrototypeOf\\(p\\)\\)\\);\")",
+      "Bash(npm install *)",
+      "PowerShell(Get-Process -Id 27580, 12500 -ErrorAction SilentlyContinue)",
+      "Bash(node -e \"const net = require\\('net'\\); const s = net.createConnection\\(6379, '127.0.0.1'\\); s.on\\('connect', \\(\\) => { console.log\\('Redis port OPEN'\\); s.destroy\\(\\); }\\); s.on\\('error', \\(e\\) => console.log\\('Redis port ERROR:', e.message\\)\\);\")",
+      "Bash(pkill -f \"ts-node\\\\|nodemon\\\\|vite\")",
+      "Bash(docker exec *)"
+    ]
+  }
+}

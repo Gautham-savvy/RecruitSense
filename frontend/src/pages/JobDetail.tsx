@@ -7,8 +7,6 @@ import { FileDropzone } from "@/components/FileDropzone";
 import { StatusBadge } from "@/components/StatusBadge";
 import { ScoreBadge } from "@/components/ScoreBadge";
 import { useSocket } from "@/hooks/useSocket";
-import { Button } from "@/components/ui/button";
-
 export default function JobDetail() {
   const { id } = useParams<{ id: string }>();
   const qc = useQueryClient();

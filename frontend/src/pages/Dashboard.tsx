@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { Plus, Briefcase, Users, Trash2, ChevronRight, Search, Sparkles, UserPlus } from "lucide-react";
 import { getJobs, createJob, deleteJob } from "@/lib/api";
 import { OrganizationProfile, useOrganization, CreateOrganization } from "@clerk/clerk-react";
-import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";

@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "JobPost" ADD COLUMN IF NOT EXISTS "orgId" TEXT;

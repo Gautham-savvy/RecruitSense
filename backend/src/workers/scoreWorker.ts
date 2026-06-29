@@ -11,7 +11,12 @@ function extractEmail(text: string): string | null {
 
 const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
 const url = new URL(REDIS_URL);
-const connection = { host: url.hostname, port: parseInt(url.port) || 6379 };
+const connection = {
+  host: url.hostname,
+  port: parseInt(url.port) || 6379,
+  ...(url.password ? { password: url.password } : {}),
+  ...(url.username && url.username !== "default" ? { username: url.username } : {}),
+};
 
 export const scoreQueue = new Queue("score-resume", { connection });
 

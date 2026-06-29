@@ -22,7 +22,15 @@ export function FileDropzone({ onUpload, loading }: FileDropzoneProps) {
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files?.length) setSelected(Array.from(e.target.files));
+    if (e.target.files?.length) {
+      const newFiles = Array.from(e.target.files);
+      setSelected(prev => {
+        const existingNames = new Set(prev.map(f => f.name));
+        const unique = newFiles.filter(f => !existingNames.has(f.name));
+        return [...prev, ...unique];
+      });
+      e.target.value = "";
+    }
   };
 
   const handleSubmit = () => {

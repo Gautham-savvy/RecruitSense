@@ -58,9 +58,10 @@ export function startScoreWorker() {
       });
 
       const email = extractEmail(candidate.resumeText ?? "");
+      const autoStage = result.overallScore >= 60 ? "SHORTLISTED" : "APPLIED";
       await prisma.candidate.update({
         where: { id: candidateId },
-        data: { status: "COMPLETED", stage: "SHORTLISTED", ...(email ? { email } : {}) },
+        data: { status: "COMPLETED", stage: autoStage, ...(email ? { email } : {}) },
       });
 
       if (email) {

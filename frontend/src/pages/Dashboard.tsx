@@ -336,17 +336,17 @@ export default function Dashboard() {
 
                   {/* Actions */}
                   <div className="flex gap-2">
-                    <Link to={`/jobs/${job.id}`} className="flex-1">
+                    <Link to={`/jobs/${job.id}/candidates`} className="flex-1">
                       <button
                         className="w-full py-2 rounded-xl text-xs font-semibold transition-all"
                         style={{ border: "1px solid var(--border)", color: "var(--text-2)", background: "transparent" }}
                         onMouseEnter={e => (e.currentTarget.style.background = "var(--bg-subtle)")}
                         onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
                       >
-                        Upload Resumes
+                        Leaderboard
                       </button>
                     </Link>
-                    <Link to={`/jobs/${job.id}/candidates`}>
+                    <Link to={`/jobs/${job.id}`}>
                       <button
                         className="flex items-center gap-1 px-4 py-2 rounded-xl text-xs font-semibold transition-opacity hover:opacity-90"
                         style={{ background: "var(--btn-primary)", color: "var(--btn-primary-fg)" }}

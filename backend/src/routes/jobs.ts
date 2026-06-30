@@ -68,6 +68,34 @@ router.delete("/:id", requireAuth, async (req, res) => {
   res.json({ success: true });
 });
 
+router.post("/:id/rescore", requireAuth, async (req, res) => {
+  const jobPostId = String(req.params.id);
+
+  const candidates = await prisma.candidate.findMany({
+    where: { jobPostId },
+    select: { id: true, resumeText: true },
+  });
+
+  // Delete existing scores and reset all candidates
+  await prisma.score.deleteMany({ where: { candidate: { jobPostId } } });
+  await prisma.interviewQuestion.deleteMany({ where: { candidate: { jobPostId } } });
+  await prisma.candidate.updateMany({
+    where: { jobPostId },
+    data: { status: "PENDING", stage: "APPLIED" },
+  });
+
+  // Re-queue only candidates that have resume text
+  let queued = 0;
+  for (const c of candidates) {
+    if (c.resumeText) {
+      await scoreQueue.add("score", { candidateId: c.id, jobPostId });
+      queued++;
+    }
+  }
+
+  res.json({ queued });
+});
+
 router.post("/:id/upload", requireAuth, upload.array("resumes", 20), async (req, res, next) => {
   try {
     const files = req.files as Express.Multer.File[];

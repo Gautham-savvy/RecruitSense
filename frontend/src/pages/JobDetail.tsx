@@ -1,8 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useCallback } from "react";
-import { ArrowLeft, Users, Loader2, Trash2 } from "lucide-react";
-import { getJob, uploadResumes, deleteCandidate } from "@/lib/api";
+import { ArrowLeft, Users, Loader2, Trash2, RefreshCw } from "lucide-react";
+import { getJob, uploadResumes, deleteCandidate, rescoreJob } from "@/lib/api";
 import { FileDropzone } from "@/components/FileDropzone";
 import { StatusBadge } from "@/components/StatusBadge";
 import { ScoreBadge } from "@/components/ScoreBadge";
@@ -30,6 +30,11 @@ export default function JobDetail() {
 
   const remove = useMutation({
     mutationFn: (candidateId: string) => deleteCandidate(candidateId),
+    onSuccess: () => qc.invalidateQueries({ queryKey: ["job", id] }),
+  });
+
+  const rescore = useMutation({
+    mutationFn: () => rescoreJob(id!),
     onSuccess: () => qc.invalidateQueries({ queryKey: ["job", id] }),
   });
 
@@ -100,16 +105,30 @@ export default function JobDetail() {
                 </span>
               )}
             </h3>
-            {candidates.length > 0 && (
-              <Link to={`/jobs/${id}/candidates`}>
+            <div className="flex items-center gap-2">
+              {candidates.length > 0 && (
                 <button
-                  className="px-4 py-1.5 rounded-xl text-sm font-semibold transition-opacity hover:opacity-90"
-                  style={{ background: "var(--btn-primary)", color: "var(--btn-primary-fg)" }}
+                  onClick={() => rescore.mutate()}
+                  disabled={rescore.isPending || processing > 0}
+                  title="Re-run AI scoring for all candidates"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-sm font-semibold transition-opacity hover:opacity-80 disabled:opacity-50"
+                  style={{ background: "var(--bg-subtle)", color: "var(--text-2)", border: "1px solid var(--border)" }}
                 >
-                  View Leaderboard
+                  <RefreshCw className={`w-3.5 h-3.5 ${rescore.isPending ? "animate-spin" : ""}`} />
+                  Re-score
                 </button>
-              </Link>
-            )}
+              )}
+              {candidates.length > 0 && (
+                <Link to={`/jobs/${id}/candidates`}>
+                  <button
+                    className="px-4 py-1.5 rounded-xl text-sm font-semibold transition-opacity hover:opacity-90"
+                    style={{ background: "var(--btn-primary)", color: "var(--btn-primary-fg)" }}
+                  >
+                    View Leaderboard
+                  </button>
+                </Link>
+              )}
+            </div>
           </div>
 
           <div className="space-y-2">

@@ -30,6 +30,8 @@ export const uploadResumes = (jobId: string, files: FileList) => {
   Array.from(files).forEach((f) => form.append("resumes", f));
   return api.post(`/jobs/${jobId}/upload`, form).then((r) => r.data);
 };
+export const rescoreJob = (jobId: string) =>
+  api.post(`/jobs/${jobId}/rescore`).then((r) => r.data);
 
 // Candidates
 export const getCandidates = (params: Record<string, string>) =>
